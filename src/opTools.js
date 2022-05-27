@@ -210,7 +210,7 @@ if (conf.get("opEn")) {
         }
         let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
         if (tag != null) {
-            nbtTmp = NBT.parseSNBT("{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s},{\"id\":8s,\"lvl\":1s},{\"id\":6s,\"lvl\":3s}]}");
+            let nbtTmp = NBT.parseSNBT("{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s},{\"id\":8s,\"lvl\":1s},{\"id\":6s,\"lvl\":3s}]}");
             let ench = nbtTmp.getTag("ench");
             tag.setTag("ench", ench);
             tag.setInt("Damage", 0);
