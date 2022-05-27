@@ -1,5 +1,5 @@
 //LiteXLoader Dev Helper
-/// <reference path="D:/PF/CODE/VSCODE/Minecraft/LLPlugin/Library/JS/Api.js" /> 
+/// <reference path="../Library/JS/Api.js" /> 
 
 
 let ISNJS = false;

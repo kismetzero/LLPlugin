@@ -1,5 +1,5 @@
 //LiteXLoader Dev Helper
-/// <reference path="D:/PF/CODE/VSCODE/Minecraft/LLPlugin/Library/JS/Api.js" /> 
+/// <reference path="../Library/JS/Api.js" /> 
 
 
 let conf = data.openConfig(".//plugins//Kismet//config//opTools.json", "json", confStrTmp)
@@ -16,32 +16,32 @@ if (conf.get("opEn")) {
             return;
         }
         ST(player, "§b附魔开始");
-        let pXuid = player.xuid;
-        mc.runcmd('/enchant ' + pXuid + ' 8 1');
-        mc.runcmd('/enchant ' + pXuid + ' 13 2');
-        mc.runcmd('/enchant ' + pXuid + ' 21 1');
-        mc.runcmd('/enchant ' + pXuid + ' 7 3');
-        mc.runcmd('/enchant ' + pXuid + ' 15 5');
-        mc.runcmd('/enchant ' + pXuid + ' 2 4');
-        mc.runcmd('/enchant ' + pXuid + ' 18 3');
-        mc.runcmd('/enchant ' + pXuid + ' 29 5');
-        mc.runcmd('/enchant ' + pXuid + ' 22 1');
-        mc.runcmd('/enchant ' + pXuid + ' 12 2');
-        mc.runcmd('/enchant ' + pXuid + ' 14 3');
-        mc.runcmd('/enchant ' + pXuid + ' 31 3');
-        mc.runcmd('/enchant ' + pXuid + ' 23 3');
-        mc.runcmd('/enchant ' + pXuid + ' 24 3');
-        mc.runcmd('/enchant ' + pXuid + ' 26 1');
-        mc.runcmd('/enchant ' + pXuid + ' 19 5');
-        mc.runcmd('/enchant ' + pXuid + ' 0 4');
-        mc.runcmd('/enchant ' + pXuid + ' 20 2');
-        mc.runcmd('/enchant ' + pXuid + ' 35 3');
-        mc.runcmd('/enchant ' + pXuid + ' 33 1');
-        mc.runcmd('/enchant ' + pXuid + ' 6 3');
-        mc.runcmd('/enchant ' + pXuid + ' 9 5');
-        mc.runcmd('/enchant ' + pXuid + ' 36 3');
-        mc.runcmd('/enchant ' + pXuid + ' 5 3');
-        mc.runcmd('/enchant ' + pXuid + ' 17 3');
+        let pName = player.name;
+        mc.runcmd('/enchant ' + pName + ' 8 1');
+        mc.runcmd('/enchant ' + pName + ' 13 2');
+        mc.runcmd('/enchant ' + pName + ' 21 1');
+        mc.runcmd('/enchant ' + pName + ' 7 3');
+        mc.runcmd('/enchant ' + pName + ' 15 5');
+        mc.runcmd('/enchant ' + pName + ' 2 4');
+        mc.runcmd('/enchant ' + pName + ' 18 3');
+        mc.runcmd('/enchant ' + pName + ' 29 5');
+        mc.runcmd('/enchant ' + pName + ' 22 1');
+        mc.runcmd('/enchant ' + pName + ' 12 2');
+        mc.runcmd('/enchant ' + pName + ' 14 3');
+        mc.runcmd('/enchant ' + pName + ' 31 3');
+        mc.runcmd('/enchant ' + pName + ' 23 3');
+        mc.runcmd('/enchant ' + pName + ' 24 3');
+        mc.runcmd('/enchant ' + pName + ' 26 1');
+        mc.runcmd('/enchant ' + pName + ' 19 5');
+        mc.runcmd('/enchant ' + pName + ' 0 4');
+        mc.runcmd('/enchant ' + pName + ' 20 2');
+        mc.runcmd('/enchant ' + pName + ' 35 3');
+        mc.runcmd('/enchant ' + pName + ' 33 1');
+        mc.runcmd('/enchant ' + pName + ' 6 3');
+        mc.runcmd('/enchant ' + pName + ' 9 5');
+        mc.runcmd('/enchant ' + pName + ' 36 3');
+        mc.runcmd('/enchant ' + pName + ' 5 3');
+        mc.runcmd('/enchant ' + pName + ' 17 3');
         ST(player, "§b附魔结束");
     }, 1);
 }

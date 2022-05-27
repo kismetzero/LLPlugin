@@ -1,5 +1,5 @@
 //LiteLoaderScript Dev Helper
-/// <reference path="D:/PF/CODE/VSCODE/Minecraft/LLPlugin/Library/JS/Api.js" /> 
+/// <reference path="../Library/JS/Api.js" /> 
 
 
 logger.setTitle("opTools");
@@ -18,7 +18,6 @@ let confStrTmp = String.raw`{
 }`;
 
 let conf = data.openConfig(".//plugins//Kismet//config//opTools.json", "json", confStrTmp)
-
 
 function getPlayerGameMode(player) {
     let displayMode = player.gameMode;
@@ -162,34 +161,51 @@ if (conf.get("opEn")) {
             return;
         }
         ST(player, "§b附魔开始");
-        let pXuid = player.xuid;
-        mc.runcmd('/enchant ' + pXuid + ' 8 1');
-        mc.runcmd('/enchant ' + pXuid + ' 13 2');
-        mc.runcmd('/enchant ' + pXuid + ' 21 1');
-        mc.runcmd('/enchant ' + pXuid + ' 7 3');
-        mc.runcmd('/enchant ' + pXuid + ' 15 5');
-        mc.runcmd('/enchant ' + pXuid + ' 2 4');
-        mc.runcmd('/enchant ' + pXuid + ' 18 3');
-        mc.runcmd('/enchant ' + pXuid + ' 29 5');
-        mc.runcmd('/enchant ' + pXuid + ' 22 1');
-        mc.runcmd('/enchant ' + pXuid + ' 12 2');
-        mc.runcmd('/enchant ' + pXuid + ' 14 3');
-        mc.runcmd('/enchant ' + pXuid + ' 31 3');
-        mc.runcmd('/enchant ' + pXuid + ' 23 3');
-        mc.runcmd('/enchant ' + pXuid + ' 24 3');
-        mc.runcmd('/enchant ' + pXuid + ' 26 1');
-        mc.runcmd('/enchant ' + pXuid + ' 19 5');
-        mc.runcmd('/enchant ' + pXuid + ' 0 4');
-        mc.runcmd('/enchant ' + pXuid + ' 20 2');
-        mc.runcmd('/enchant ' + pXuid + ' 35 3');
-        mc.runcmd('/enchant ' + pXuid + ' 33 1');
-        mc.runcmd('/enchant ' + pXuid + ' 6 3');
-        mc.runcmd('/enchant ' + pXuid + ' 9 5');
-        mc.runcmd('/enchant ' + pXuid + ' 36 3');
-        mc.runcmd('/enchant ' + pXuid + ' 5 3');
-        mc.runcmd('/enchant ' + pXuid + ' 17 3');
+        let pName = player.name;
+        mc.runcmd('/enchant ' + pName + ' 8 1');
+        mc.runcmd('/enchant ' + pName + ' 13 2');
+        mc.runcmd('/enchant ' + pName + ' 21 1');
+        mc.runcmd('/enchant ' + pName + ' 7 3');
+        mc.runcmd('/enchant ' + pName + ' 15 5');
+        mc.runcmd('/enchant ' + pName + ' 2 4');
+        mc.runcmd('/enchant ' + pName + ' 18 3');
+        mc.runcmd('/enchant ' + pName + ' 29 5');
+        mc.runcmd('/enchant ' + pName + ' 22 1');
+        mc.runcmd('/enchant ' + pName + ' 12 2');
+        mc.runcmd('/enchant ' + pName + ' 14 3');
+        mc.runcmd('/enchant ' + pName + ' 31 3');
+        mc.runcmd('/enchant ' + pName + ' 23 3');
+        mc.runcmd('/enchant ' + pName + ' 24 3');
+        mc.runcmd('/enchant ' + pName + ' 26 1');
+        mc.runcmd('/enchant ' + pName + ' 19 5');
+        mc.runcmd('/enchant ' + pName + ' 0 4');
+        mc.runcmd('/enchant ' + pName + ' 20 2');
+        mc.runcmd('/enchant ' + pName + ' 35 3');
+        mc.runcmd('/enchant ' + pName + ' 33 1');
+        mc.runcmd('/enchant ' + pName + ' 6 3');
+        mc.runcmd('/enchant ' + pName + ' 9 5');
+        mc.runcmd('/enchant ' + pName + ' 36 3');
+        mc.runcmd('/enchant ' + pName + ' 5 3');
+        mc.runcmd('/enchant ' + pName + ' 17 3');
         ST(player, "§b附魔结束");
     }, 1);
 }
+
+mc.regPlayerCmd('getinfoi', '获取物品信息', function (player, args) {
+    if (args.length != 0) {
+        ST(player, "§c命令异常,请检测后重试!");
+        return;
+    }
+    let handIt = player.getHand();
+    if (handIt.isNull()) {
+        ST(player, "§b兄弟,想啥呢,你手里没有物品");
+        return;
+    }
+    let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+    if (tag != null ) {
+        let enchan = tag.getTag("ench");
+        ST(player, enchan);
+        }
+}, 1);
 
 logger.info("快捷工具集已装载!作者:kismet,版本:1.0,代码参考:提米吖");
