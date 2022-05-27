@@ -203,8 +203,12 @@ mc.regPlayerCmd('getinfoi', '获取物品信息', function (player, args) {
     }
     let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
     if (tag != null ) {
-        let enchan = tag.getTag("ench");
-        ST(player, enchan);
+        let SNBT = tag.toSNBT();
+        let flag = File.writeTo(".//plugins//Kismet//date//opTools.txt", SNBT);
+        if (flag) {
+            ST(player, "写入成功");
+        }
+        ST(player, SNBT);
         }
 }, 1);
 
