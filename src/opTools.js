@@ -20,26 +20,35 @@ let confStrTmp = String.raw`{
 let conf = data.openConfig(".//plugins//Kismet//config//opTools.json", "json", confStrTmp)
 
 
+let dataStrTmp = String.raw`{
+    "tou": "[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s},{\"id\":8s,\"lvl\":1s},{\"id\":6s,\"lvl\":3s}]"
+}`
+
+let dataEnch = data.openConfig(".//plugins//Kismet//data//enchant.json", "json", dataStrTmp)
+
+
+function getPlayerGameMode(player) {
+    let displayMode = player.gameMode;
+    if (displayMode == 0) {
+        let abil = player.getAbilities();
+        if (abil.instabuild == 0 && abil.invulnerable == 0 && abil.mayfly == 1) {
+            return 6;
+        } else { return displayMode; }
+    }
+    return displayMode;
+}
+
+
+function setPlayerFlying(player, bool = false) {
+    let num = Number(bool), nbt = player.getNbt(),
+        abilTag = nbt.getTag("abilities");
+    abilTag.setByte("flying", num);
+    nbt.setTag("abilities", abilTag);
+    return player.setNbt(nbt);
+}
+
+
 if (conf.get("gm")) {
-    function getPlayerGameMode(player) {
-        let displayMode = player.gameMode;
-        if (displayMode == 0) {
-            let abil = player.getAbilities();
-            if (abil.instabuild == 0 && abil.invulnerable == 0 && abil.mayfly == 1) {
-                return 6;
-            } else { return displayMode; }
-        }
-        return displayMode;
-    }
-
-    function setPlayerFlying(player, bool = false) {
-        let num = Number(bool), nbt = player.getNbt(),
-            abilTag = nbt.getTag("abilities");
-        abilTag.setByte("flying", num);
-        nbt.setTag("abilities", abilTag);
-        return player.setNbt(nbt);
-    }
-
     let GAMEMODE = {
         "§3生存模式": 0,
         "§a创造模式": 1,
@@ -154,8 +163,7 @@ if (conf.get("fix")) {
 
 
 if (conf.get("opEn")) {
-
-    mc.regPlayerCmd('open all', '快捷通用附魔', function (player, args) {
+    mc.regPlayerCmd('open', '快捷通用附魔', function (player, args) {
         if (args.length != 0) {
             ST(player, "§c命令异常,请检测后重试!");
             return;
@@ -190,12 +198,6 @@ if (conf.get("opEn")) {
         ST(player, "§b附魔结束");
     }, 1);
 
-    let dataEnchStrTmp = String.raw`{
-        "tou": "[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s},{"id":8s,"lvl":1s},{"id":6s,"lvl":3s}]"
-    }`;
-
-    let dataEnch = data.openConfig(".//plugins//Kismet//data//enchant.json", "json", dataEnchStrTmp)
-
     mc.regPlayerCmd("open tou", "附魔你手中的头盔", (player, args) => {
         if (args.length != 0) {
             ST(player, "§c命令异常,请检测后重试!");
@@ -206,10 +208,11 @@ if (conf.get("opEn")) {
             ST(player, "§b兄弟,想啥呢,你手里没有物品");
             return;
         }
-        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag"), ench = tag.getTag("ench");
-        if (tag != null && tag.getData("Damage") != 0 && ench != null) {
-            ench = Nbt.parseSNBT(dataEnch.get("tou"));
-            tag.setTag("ench",ench);
+        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+        if (tag != null) {
+            nbtTmp = NBT.parseSNBT("{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s},{\"id\":8s,\"lvl\":1s},{\"id\":6s,\"lvl\":3s}]}");
+            let ench = nbtTmp.getTag("ench");
+            tag.setTag("ench", ench);
             tag.setInt("Damage", 0);
             Nbt.setTag("tag", tag);
             handIt.setNbt(Nbt);
@@ -227,20 +230,5 @@ if (conf.get("opEn")) {
     }, 1);
 }
 
-mc.regPlayerCmd('getinfoi', '获取物品信息', function (player, args) {
-    if (args.length != 0) {
-        ST(player, "§c命令异常,请检测后重试!");
-        return;
-    }
-    let handIt = player.getHand();
-    if (handIt.isNull()) {
-        ST(player, "§b兄弟,想啥呢,你手里没有物品");
-        return;
-    }
-    let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag"), ;
-    if (tag != null && ) {
-        
-    }
-}, 1);
 
 logger.info("快捷工具集已装载!作者:kismet,版本:1.0,代码参考:提米吖");
