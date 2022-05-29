@@ -1,1 +1,0 @@
-{"Damage":0,"RepairCost":0,"ench":[{"id":18s,"lvl":3s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":26s,"lvl":1s}]}

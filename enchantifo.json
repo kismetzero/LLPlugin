@@ -1,3 +1,16 @@
+'{"tou":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s},{"id":8s,"lvl":1s},{"id":6s,"lvl":3s}],
+"xiong":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s}],
+"ku":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s}],
+"xie":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s},{"id":7s,"lvl":3s},{"id":2s,"lvl":4s},{"id":6s,"lvl":3s}],
+"jian":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":11s,"lvl":5s},{"id":13s,"lvl":2s},{"id":12s,"lvl":2s},{"id":14s,"lvl":3s},{"id":9s,"lvl":5s},{"id":10s,"lvl":5s}],
+"fu":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":11s,"lvl":5s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s},{"id":9s,"lvl":5s},{"id":10s,"lvl":5s}],
+"gao":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s}],
+"qiu":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s}],
+"chu":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s}],
+"nu":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":33s,"lvl":1s},{"id":34s,"lvl":4s},{"id":35s,"lvl":3s}],
+"gong":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":21s,"lvl":1s},{"id":22s,"lvl":1s},{"id":19s,"lvl":5s},{"id":20s,"lvl":2s}]}'
+
+
 "头盔":
 {
     "tag":{
@@ -14,6 +27,7 @@
     }
 }
 "{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s},{\"id\":8s,\"lvl\":1s},{\"id\":6s,\"lvl\":3s}]}"
+'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s},{"id":8s,"lvl":1s},{"id":6s,"lvl":3s}]}'
 
 " 胸甲":
 {
@@ -29,6 +43,7 @@
     }
 }
 "{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s}]}"
+'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s}]}'
 
 "护腿":
 {
@@ -44,6 +59,7 @@
     }
 }
 "{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s}]}"
+'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s}]}'
 
 "靴子":
 {
@@ -56,10 +72,13 @@
             {"id":4s,"lvl":4s},       //弹射物保护
             {"id":0s,"lvl":4s},       //保护
             {"id":7s,"lvl":3s},       //深海探索者
-            {"id":2s,"lvl":4s}        //摔落保护
+            {"id":2s,"lvl":4s},       //摔落保护
+            {"id":36s,"lvl":3s}       //摔落保护
         ]
     }
 }
+"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s},{\"id\":7s,\"lvl\":3s},{\"id\":2s,\"lvl\":4s},{\"id\":36s,\"lvl\":3s}]}"
+'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s},{"id":7s,"lvl":3s},{"id":2s,"lvl":4s},{"id":36s,"lvl":3s}]}'
 
 "剑":
 {
@@ -76,6 +95,8 @@
         ]
     }
 }
+"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":11s,\"lvl\":5s},{\"id\":13s,\"lvl\":2s},{\"id\":12s,\"lvl\":2s},{\"id\":14s,\"lvl\":3s},{\"id\":9s,\"lvl\":5s},{\"id\":10s,\"lvl\":5s}]}"
+'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":11s,"lvl":5s},{"id":13s,"lvl":2s},{"id":12s,"lvl":2s},{"id":14s,"lvl":3s},{"id":9s,"lvl":5s},{"id":10s,"lvl":5s}]}'
 
 "斧":
 {
@@ -91,6 +112,8 @@
         ]
     }
 }
+"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":11s,\"lvl\":5s},{\"id\":15s,\"lvl\":5s},{\"id\":18s,\"lvl\":3s},{\"id\":9s,\"lvl\":5s},{\"id\":10s,\"lvl\":5s}]}"
+'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":11s,"lvl":5s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s},{"id":9s,"lvl":5s},{"id":10s,"lvl":5s}]}'
 
 "镐":
 {
@@ -103,6 +126,8 @@
         ]
     }
 }
+"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":15s,\"lvl\":5s},{\"id\":18s,\"lvl\":3s}]}"
+'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s}]}'
 
 "锹":
 {
@@ -115,6 +140,8 @@
         ]
     }
 }
+"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":15s,\"lvl\":5s},{\"id\":18s,\"lvl\":3s}]}"
+'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s}]}'
 
 "锄":
 {
@@ -127,6 +154,8 @@
         ]
     }
 }
+"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":15s,\"lvl\":5s},{\"id\":18s,\"lvl\":3s}]}"
+'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s}]}'
 
 "弩":
 {
@@ -140,6 +169,8 @@
         ]
     }
 }
+"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":33s,\"lvl\":1s},{\"id\":34s,\"lvl\":4s},{\"id\":35s,\"lvl\":3s}]}"
+'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":33s,"lvl":1s},{"id":34s,"lvl":4s},{"id":35s,"lvl":3s}]}'
 
 "弓":
 {
@@ -154,3 +185,5 @@
         ]
     }
 }
+"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":21s,\"lvl\":1s},{\"id\":22s,\"lvl\":1s},{\"id\":19s,\"lvl\":5s},{\"id\":20s,\"lvl\":2s}]}"
+'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":21s,"lvl":1s},{"id":22s,"lvl":1s},{"id":19s,"lvl":5s},{"id":20s,"lvl":2s}]}'

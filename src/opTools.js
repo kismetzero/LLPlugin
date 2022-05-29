@@ -1,7 +1,6 @@
 //LiteLoaderScript Dev Helper
 /// <reference path="../Library/JS/Api.js" /> 
 
-
 logger.setTitle("opTools");
 logger.setLogLevel(4);
 
@@ -17,14 +16,10 @@ let confStrTmp = String.raw`{
     "opEn": true
 }`;
 
-let conf = data.openConfig(".//plugins//Kismet//config//opTools.json", "json", confStrTmp)
+let conf = data.openConfig(".//plugins//Kismet//config//opTools.json", "json", confStrTmp);
 
 
-let dataStrTmp = String.raw`{
-    "tou": "[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s},{\"id\":8s,\"lvl\":1s},{\"id\":6s,\"lvl\":3s}]"
-}`
-
-let dataEnch = data.openConfig(".//plugins//Kismet//data//enchant.json", "json", dataStrTmp)
+let enchNbt =  NBT.parseSNBT('{"tou":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s},{"id":8s,"lvl":1s},{"id":6s,"lvl":3s}],"xiong":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s}],"ku":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s}],"xie":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s},{"id":7s,"lvl":3s},{"id":2s,"lvl":4s}],"jian":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":11s,"lvl":5s},{"id":13s,"lvl":2s},{"id":12s,"lvl":2s},{"id":14s,"lvl":3s},{"id":9s,"lvl":5s},{"id":10s,"lvl":5s}],"fu":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":11s,"lvl":5s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s},{"id":9s,"lvl":5s},{"id":10s,"lvl":5s}],"gao":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s}],"qiu":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s}],"chu":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s}],"nu":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":33s,"lvl":1s},{"id":34s,"lvl":4s},{"id":35s,"lvl":3s}],"gong":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":21s,"lvl":1s},{"id":22s,"lvl":1s},{"id":19s,"lvl":5s},{"id":20s,"lvl":2s}]}');
 
 
 function getPlayerGameMode(player) {
@@ -210,8 +205,341 @@ if (conf.get("opEn")) {
         }
         let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
         if (tag != null) {
-            let nbtTmp = NBT.parseSNBT("{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s},{\"id\":8s,\"lvl\":1s},{\"id\":6s,\"lvl\":3s}]}");
-            let ench = nbtTmp.getTag("ench");
+            let ench = enchNbt.getTag("tou");
+            tag.setTag("ench", ench);
+            tag.setInt("Damage", 0);
+            Nbt.setTag("tag", tag);
+            handIt.setNbt(Nbt);
+            let xuid = player.xuid;
+            setTimeout(() => {
+                let pl1 = mc.getPlayer(xuid);
+                if (pl1 != null) {
+                    pl1.refreshItems();
+                }
+            }, 50);//next tick
+            ST(player, "§b附魔完成");
+        } else {
+            ST(player, "§c你手上的物品不需要附魔!");
+        }
+    }, 1);
+
+    mc.regPlayerCmd("open xiong", "附魔你手中的胸甲", (player, args) => {
+        if (args.length != 0) {
+            ST(player, "§c命令异常,请检测后重试!");
+            return;
+        }
+        let handIt = player.getHand();
+        if (handIt.isNull()) {
+            ST(player, "§b兄弟,想啥呢,你手里没有物品");
+            return;
+        }
+        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+        if (tag != null) {
+            let ench = enchNbt.getTag("xiong");
+            tag.setTag("ench", ench);
+            tag.setInt("Damage", 0);
+            Nbt.setTag("tag", tag);
+            handIt.setNbt(Nbt);
+            let xuid = player.xuid;
+            setTimeout(() => {
+                let pl1 = mc.getPlayer(xuid);
+                if (pl1 != null) {
+                    pl1.refreshItems();
+                }
+            }, 50);//next tick
+            ST(player, "§b附魔完成");
+        } else {
+            ST(player, "§c你手上的物品不需要附魔!");
+        }
+    }, 1);
+
+    mc.regPlayerCmd("open ku", "附魔你手中的护腿", (player, args) => {
+        if (args.length != 0) {
+            ST(player, "§c命令异常,请检测后重试!");
+            return;
+        }
+        let handIt = player.getHand();
+        if (handIt.isNull()) {
+            ST(player, "§b兄弟,想啥呢,你手里没有物品");
+            return;
+        }
+        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+        if (tag != null) {
+            let ench = enchNbt.getTag("ku");
+            tag.setTag("ench", ench);
+            tag.setInt("Damage", 0);
+            Nbt.setTag("tag", tag);
+            handIt.setNbt(Nbt);
+            let xuid = player.xuid;
+            setTimeout(() => {
+                let pl1 = mc.getPlayer(xuid);
+                if (pl1 != null) {
+                    pl1.refreshItems();
+                }
+            }, 50);//next tick
+            ST(player, "§b附魔完成");
+        } else {
+            ST(player, "§c你手上的物品不需要附魔!");
+        }
+    }, 1);
+
+    mc.regPlayerCmd("open xie", "附魔你手中的靴子", (player, args) => {
+        if (args.length != 0) {
+            ST(player, "§c命令异常,请检测后重试!");
+            return;
+        }
+        let handIt = player.getHand();
+        if (handIt.isNull()) {
+            ST(player, "§b兄弟,想啥呢,你手里没有物品");
+            return;
+        }
+        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+        if (tag != null) {
+            let ench = enchNbt.getTag("xie");
+            tag.setTag("ench", ench);
+            tag.setInt("Damage", 0);
+            Nbt.setTag("tag", tag);
+            handIt.setNbt(Nbt);
+            let xuid = player.xuid;
+            setTimeout(() => {
+                let pl1 = mc.getPlayer(xuid);
+                if (pl1 != null) {
+                    pl1.refreshItems();
+                }
+            }, 50);//next tick
+            ST(player, "§b附魔完成");
+        } else {
+            ST(player, "§c你手上的物品不需要附魔!");
+        }
+    }, 1);
+
+    mc.regPlayerCmd("open jian", "附魔你手中的剑", (player, args) => {
+        if (args.length != 0) {
+            ST(player, "§c命令异常,请检测后重试!");
+            return;
+        }
+        let handIt = player.getHand();
+        if (handIt.isNull()) {
+            ST(player, "§b兄弟,想啥呢,你手里没有物品");
+            return;
+        }
+        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+        if (tag != null) {
+            let ench = enchNbt.getTag("jian");
+            tag.setTag("ench", ench);
+            tag.setInt("Damage", 0);
+            Nbt.setTag("tag", tag);
+            handIt.setNbt(Nbt);
+            let xuid = player.xuid;
+            setTimeout(() => {
+                let pl1 = mc.getPlayer(xuid);
+                if (pl1 != null) {
+                    pl1.refreshItems();
+                }
+            }, 50);//next tick
+            ST(player, "§b附魔完成");
+        } else {
+            ST(player, "§c你手上的物品不需要附魔!");
+        }
+    }, 1);
+
+    mc.regPlayerCmd("open fu", "附魔你手中的斧", (player, args) => {
+        if (args.length != 0) {
+            ST(player, "§c命令异常,请检测后重试!");
+            return;
+        }
+        let handIt = player.getHand();
+        if (handIt.isNull()) {
+            ST(player, "§b兄弟,想啥呢,你手里没有物品");
+            return;
+        }
+        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+        if (tag != null) {
+            let ench = enchNbt.getTag("fu");
+            tag.setTag("ench", ench);
+            tag.setInt("Damage", 0);
+            Nbt.setTag("tag", tag);
+            handIt.setNbt(Nbt);
+            let xuid = player.xuid;
+            setTimeout(() => {
+                let pl1 = mc.getPlayer(xuid);
+                if (pl1 != null) {
+                    pl1.refreshItems();
+                }
+            }, 50);//next tick
+            ST(player, "§b附魔完成");
+        } else {
+            ST(player, "§c你手上的物品不需要附魔!");
+        }
+    }, 1);
+
+    mc.regPlayerCmd("open gao", "附魔你手中的镐", (player, args) => {
+        if (args.length != 0) {
+            ST(player, "§c命令异常,请检测后重试!");
+            return;
+        }
+        let handIt = player.getHand();
+        if (handIt.isNull()) {
+            ST(player, "§b兄弟,想啥呢,你手里没有物品");
+            return;
+        }
+        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+        if (tag != null) {
+            let ench = enchNbt.getTag("gao");
+            tag.setTag("ench", ench);
+            tag.setInt("Damage", 0);
+            Nbt.setTag("tag", tag);
+            handIt.setNbt(Nbt);
+            let xuid = player.xuid;
+            setTimeout(() => {
+                let pl1 = mc.getPlayer(xuid);
+                if (pl1 != null) {
+                    pl1.refreshItems();
+                }
+            }, 50);//next tick
+            ST(player, "§b附魔完成");
+        } else {
+            ST(player, "§c你手上的物品不需要附魔!");
+        }
+    }, 1);
+
+    mc.regPlayerCmd("open qiu", "附魔你手中的锹", (player, args) => {
+        if (args.length != 0) {
+            ST(player, "§c命令异常,请检测后重试!");
+            return;
+        }
+        let handIt = player.getHand();
+        if (handIt.isNull()) {
+            ST(player, "§b兄弟,想啥呢,你手里没有物品");
+            return;
+        }
+        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+        if (tag != null) {
+            let ench = enchNbt.getTag("qiu");
+            tag.setTag("ench", ench);
+            tag.setInt("Damage", 0);
+            Nbt.setTag("tag", tag);
+            handIt.setNbt(Nbt);
+            let xuid = player.xuid;
+            setTimeout(() => {
+                let pl1 = mc.getPlayer(xuid);
+                if (pl1 != null) {
+                    pl1.refreshItems();
+                }
+            }, 50);//next tick
+            ST(player, "§b附魔完成");
+        } else {
+            ST(player, "§c你手上的物品不需要附魔!");
+        }
+    }, 1);
+
+    mc.regPlayerCmd("open chu", "附魔你手中的锄", (player, args) => {
+        if (args.length != 0) {
+            ST(player, "§c命令异常,请检测后重试!");
+            return;
+        }
+        let handIt = player.getHand();
+        if (handIt.isNull()) {
+            ST(player, "§b兄弟,想啥呢,你手里没有物品");
+            return;
+        }
+        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+        if (tag != null) {
+            let ench = enchNbt.getTag("chu");
+            tag.setTag("ench", ench);
+            tag.setInt("Damage", 0);
+            Nbt.setTag("tag", tag);
+            handIt.setNbt(Nbt);
+            let xuid = player.xuid;
+            setTimeout(() => {
+                let pl1 = mc.getPlayer(xuid);
+                if (pl1 != null) {
+                    pl1.refreshItems();
+                }
+            }, 50);//next tick
+            ST(player, "§b附魔完成");
+        } else {
+            ST(player, "§c你手上的物品不需要附魔!");
+        }
+    }, 1);
+
+    mc.regPlayerCmd("open nu", "附魔你手中的弩", (player, args) => {
+        if (args.length != 0) {
+            ST(player, "§c命令异常,请检测后重试!");
+            return;
+        }
+        let handIt = player.getHand();
+        if (handIt.isNull()) {
+            ST(player, "§b兄弟,想啥呢,你手里没有物品");
+            return;
+        }
+        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+        if (tag != null) {
+            let ench = enchNbt.getTag("nu");
+            tag.setTag("ench", ench);
+            tag.setInt("Damage", 0);
+            Nbt.setTag("tag", tag);
+            handIt.setNbt(Nbt);
+            let xuid = player.xuid;
+            setTimeout(() => {
+                let pl1 = mc.getPlayer(xuid);
+                if (pl1 != null) {
+                    pl1.refreshItems();
+                }
+            }, 50);//next tick
+            ST(player, "§b附魔完成");
+        } else {
+            ST(player, "§c你手上的物品不需要附魔!");
+        }
+    }, 1);
+
+    mc.regPlayerCmd("open gong", "附魔你手中的弓", (player, args) => {
+        if (args.length != 0) {
+            ST(player, "§c命令异常,请检测后重试!");
+            return;
+        }
+        let handIt = player.getHand();
+        if (handIt.isNull()) {
+            ST(player, "§b兄弟,想啥呢,你手里没有物品");
+            return;
+        }
+        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+        if (tag != null) {
+            let ench = enchNbt.getTag("gong");
+            tag.setTag("ench", ench);
+            tag.setInt("Damage", 0);
+            Nbt.setTag("tag", tag);
+            handIt.setNbt(Nbt);
+            let xuid = player.xuid;
+            setTimeout(() => {
+                let pl1 = mc.getPlayer(xuid);
+                if (pl1 != null) {
+                    pl1.refreshItems();
+                }
+            }, 50);//next tick
+            ST(player, "§b附魔完成");
+        } else {
+            ST(player, "§c你手上的物品不需要附魔!");
+        }
+    }, 1);
+
+    mc.regPlayerCmd("open test", "SNBT附魔test", (player, args) => {
+        if (args.length != 1) {
+            ST(player, "§c命令异常,请检测后重试!");
+            return;
+        }
+        let snbtStrTmp = args[0];
+        ST(player, snbtStrTmp);
+        ST(player, typeof(snbtStrTmp));
+        let snbtTmp = NBT.parseSNBT(snbtStrTmp);
+        let handIt = player.getHand();
+        if (handIt.isNull()) {
+            ST(player, "§b兄弟,想啥呢,你手里没有物品");
+            return;
+        }
+        let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+        if (tag != null) {
+            let ench = snbtTmp.getTag("ench");
             tag.setTag("ench", ench);
             tag.setInt("Damage", 0);
             Nbt.setTag("tag", tag);
@@ -230,5 +558,26 @@ if (conf.get("opEn")) {
     }, 1);
 }
 
+
+mc.regPlayerCmd('getinfoi', '获取物品信息', function (player, args) {
+    if (args.length != 0) {
+        ST(player, "§c命令异常,请检测后重试!");
+        return;
+    }
+    let handIt = player.getHand();
+    if (handIt.isNull()) {
+        ST(player, "§b兄弟,想啥呢,你手里没有物品");
+        return;
+    }
+    let Nbt = handIt.getNbt(), tag = Nbt.getTag("tag");
+    if (tag != null) {
+        let SNBT = tag.toSNBT();
+        let flag = File.writeLine(".//plugins//Kismet//data//SNBT.txt", SNBT);
+        if (flag) {
+            ST(player, "写入成功");
+        }
+        ST(player, SNBT);
+    }
+}, 1);
 
 logger.info("快捷工具集已装载!作者:kismet,版本:1.0,代码参考:提米吖");
