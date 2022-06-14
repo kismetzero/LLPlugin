@@ -15,25 +15,26 @@
 {
     "tag":{
         "ench":[
-            {"id":26s,"lvl":1s},      //经验修补
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
             {"id":17s,"lvl":3s},      //耐久
             {"id":3s,"lvl":4s},       //爆炸保护
             {"id":1s,"lvl":4s},       //火焰保护
             {"id":4s,"lvl":4s},       //弹射物保护
             {"id":0s,"lvl":4s},       //保护
-            {"id":8s,"lvl":1s},       //水下速掘
+            {"id":8s,"lvl":1s},       //水下速掘（MAX；1）
             {"id":6s,"lvl":3s}        //水下呼吸
+
+            {"id":5s,"lvl":3s}        //荆棘 （MAX；10）
         ]
     }
 }
-"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s},{\"id\":8s,\"lvl\":1s},{\"id\":6s,\"lvl\":3s}]}"
-'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s},{"id":8s,"lvl":1s},{"id":6s,"lvl":3s}]}'
+
 
 " 胸甲":
 {
     "tag":{
         "ench":[
-            {"id":26s,"lvl":1s},      //经验修补
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
             {"id":17s,"lvl":3s},      //耐久
             {"id":3s,"lvl":4s},       //爆炸保护
             {"id":1s,"lvl":4s},       //火焰保护
@@ -42,14 +43,13 @@
         ]
     }
 }
-"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s}]}"
-'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s}]}'
+
 
 "护腿":
 {
     "tag":{
         "ench":[
-            {"id":26s,"lvl":1s},      //经验修补
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
             {"id":17s,"lvl":3s},      //耐久
             {"id":3s,"lvl":4s},       //爆炸保护
             {"id":1s,"lvl":4s},       //火焰保护
@@ -58,132 +58,154 @@
         ]
     }
 }
-"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s}]}"
-'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s}]}'
+
 
 "靴子":
 {
     "tag":{
         "ench":[
-            {"id":26s,"lvl":1s},      //经验修补
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
             {"id":17s,"lvl":3s},      //耐久
             {"id":3s,"lvl":4s},       //爆炸保护
             {"id":1s,"lvl":4s},       //火焰保护
             {"id":4s,"lvl":4s},       //弹射物保护
             {"id":0s,"lvl":4s},       //保护
-            {"id":7s,"lvl":3s},       //深海探索者
+            {"id":7s,"lvl":3s},       //深海探索者（MAX；3）
             {"id":2s,"lvl":4s},       //摔落保护
-            {"id":36s,"lvl":3s}       //灵魂疾行
+            {"id":36s,"lvl":3s}       //灵魂疾行（ADV；5）
+
+            {"id":25s,"lvl":2s}       //冰霜行者（ADV；3）
         ]
     }
 }
-"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":3s,\"lvl\":4s},{\"id\":1s,\"lvl\":4s},{\"id\":4s,\"lvl\":4s},{\"id\":0s,\"lvl\":4s},{\"id\":7s,\"lvl\":3s},{\"id\":2s,\"lvl\":4s},{\"id\":36s,\"lvl\":3s}]}"
-'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":3s,"lvl":4s},{"id":1s,"lvl":4s},{"id":4s,"lvl":4s},{"id":0s,"lvl":4s},{"id":7s,"lvl":3s},{"id":2s,"lvl":4s},{"id":36s,"lvl":3s}]}'
+
 
 "剑":
 {
     "tag":{
         "ench":[
-            {"id":26s,"lvl":1s},      //经验修补
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
             {"id":17s,"lvl":3s},      //耐久
             {"id":11s,"lvl":5s},      //节肢杀手
             {"id":13s,"lvl":2s},      //火焰附加
-            {"id":12s,"lvl":2s},      //击退
-            {"id":14s,"lvl":3s},      //抢夺
+            {"id":12s,"lvl":2s},      //击退（ADV；3）
+            {"id":14s,"lvl":3s},      //抢夺（ADV；10）
             {"id":9s,"lvl":5s},       //锋利
             {"id":10s,"lvl":5s}       //亡灵杀手
         ]
     }
 }
-"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":11s,\"lvl\":5s},{\"id\":13s,\"lvl\":2s},{\"id\":12s,\"lvl\":2s},{\"id\":14s,\"lvl\":3s},{\"id\":9s,\"lvl\":5s},{\"id\":10s,\"lvl\":5s}]}"
-'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":11s,"lvl":5s},{"id":13s,"lvl":2s},{"id":12s,"lvl":2s},{"id":14s,"lvl":3s},{"id":9s,"lvl":5s},{"id":10s,"lvl":5s}]}'
+
 
 "斧":
 {
     "tag":{
         "ench":[
-            {"id":26s,"lvl":1s},      //经验修补
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
             {"id":17s,"lvl":3s},      //耐久
             {"id":11s,"lvl":5s},      //节肢杀手
             {"id":15s,"lvl":5s},      //效率
-            {"id":18s,"lvl":3s},      //时运
+            {"id":18s,"lvl":3s},      //时运（ADV；8）
             {"id":9s,"lvl":5s},       //锋利
             {"id":10s,"lvl":5s}       //亡灵杀手
         ]
     }
 }
-"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":11s,\"lvl\":5s},{\"id\":15s,\"lvl\":5s},{\"id\":18s,\"lvl\":3s},{\"id\":9s,\"lvl\":5s},{\"id\":10s,\"lvl\":5s}]}"
-'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":11s,"lvl":5s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s},{"id":9s,"lvl":5s},{"id":10s,"lvl":5s}]}'
+
 
 "镐":
 {
     "tag":{
         "ench":[
-            {"id":26s,"lvl":1s},      //经验修补
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
             {"id":17s,"lvl":3s},      //耐久
             {"id":15s,"lvl":5s},      //效率
-            {"id":18s,"lvl":3s}       //时运
+            {"id":18s,"lvl":3s}       //时运（ADV；8）
+
+            {"id":16s,"lvl":1s}       //时运（MAX；1）
         ]
     }
 }
-"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":15s,\"lvl\":5s},{\"id\":18s,\"lvl\":3s}]}"
-'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s}]}'
+
 
 "锹":
 {
     "tag":{
         "ench":[
-            {"id":26s,"lvl":1s},      //经验修补
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
             {"id":17s,"lvl":3s},      //耐久
             {"id":15s,"lvl":5s},      //效率
-            {"id":18s,"lvl":3s}       //时运
+            {"id":18s,"lvl":3s}       //时运（ADV；8）
         ]
     }
 }
-"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":15s,\"lvl\":5s},{\"id\":18s,\"lvl\":3s}]}"
-'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s}]}'
+
 
 "锄":
 {
     "tag":{
         "ench":[
-            {"id":26s,"lvl":1s},      //经验修补
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
             {"id":17s,"lvl":3s},      //耐久
             {"id":15s,"lvl":5s},      //效率
-            {"id":18s,"lvl":3s}       //时运
+            {"id":18s,"lvl":3s}       //时运（ADV；8）
         ]
     }
 }
-"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":15s,\"lvl\":5s},{\"id\":18s,\"lvl\":3s}]}"
-'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":15s,"lvl":5s},{"id":18s,"lvl":3s}]}'
+
 
 "弩":
 {
     "tag":{
         "ench":[
-            {"id":26s,"lvl":1s},      //经验修补
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
             {"id":17s,"lvl":3s},      //耐久
-            {"id":33s,"lvl":1s},      //多重射击
-            {"id":34s,"lvl":4s},      //穿透
-            {"id":35s,"lvl":3s}       //快速装填
+            {"id":33s,"lvl":1s},      //多重射击（MAX；1）
+            {"id":34s,"lvl":4s},      //穿透（MAX；127）
+            {"id":35s,"lvl":3s}       //快速装填（MAX；5）
         ]
     }
 }
-"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":33s,\"lvl\":1s},{\"id\":34s,\"lvl\":4s},{\"id\":35s,\"lvl\":3s}]}"
-'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":33s,"lvl":1s},{"id":34s,"lvl":4s},{"id":35s,"lvl":3s}]}'
+
 
 "弓":
 {
     "tag":{
         "ench":[
-            {"id":26s,"lvl":1s},      //经验修补
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
             {"id":17s,"lvl":3s},      //耐久
-            {"id":21s,"lvl":1s},      //火矢
-            {"id":22s,"lvl":1s},      //无限
+            {"id":21s,"lvl":1s},      //火矢（ADV；0）
+            {"id":22s,"lvl":1s},      //无限（MAX；1）
             {"id":19s,"lvl":5s},      //力量
-            {"id":20s,"lvl":2s}       //冲击
+            {"id":20s,"lvl":2s}       //冲击（ADV；3）
         ]
     }
 }
-"{\"ench\":[{\"id\":26s,\"lvl\":1s},{\"id\":17s,\"lvl\":3s},{\"id\":21s,\"lvl\":1s},{\"id\":22s,\"lvl\":1s},{\"id\":19s,\"lvl\":5s},{\"id\":20s,\"lvl\":2s}]}"
-'{"ench":[{"id":26s,"lvl":1s},{"id":17s,"lvl":3s},{"id":21s,"lvl":1s},{"id":22s,"lvl":1s},{"id":19s,"lvl":5s},{"id":20s,"lvl":2s}]}'
+
+
+"三叉戟":
+{
+    "tag":{
+        "ench":[
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
+            {"id":17s,"lvl":3s},      //耐久
+            {"id":32s,"lvl":1s},      //引雷（MAX；1）
+            {"id":29s,"lvl":5s},      //穿刺
+            {"id":31s,"lvl":3s}       //忠诚（MAX；86）
+
+            {"id":30s,"lvl":3s}       //激流（ADV；10）
+        ]
+    }
+}
+
+"钓":
+{
+    "tag":{
+        "ench":[
+            {"id":26s,"lvl":1s},      //经验修补（MAX；1）
+            {"id":17s,"lvl":3s},      //耐久
+            {"id":23s,"lvl":3s},      //海之眷顾（ADV；10）
+            {"id":24s,"lvl":3s}       //饵钓（MAX；5）
+        ]
+    }
+}
